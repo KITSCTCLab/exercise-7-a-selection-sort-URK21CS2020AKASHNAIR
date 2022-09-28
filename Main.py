@@ -1,15 +1,22 @@
-# Insertion Sorting # for i := 1 to size-1 do
-key := array[i] j := i
-while j > 0 AND array[j-1] > key do array[j] := array[j-1];
-j := j – 1 done
-array[j] := key
+from typing import List
 
+def insertionSort(array) -> List[int]:
+  # Write your code here
+  for i in range(1, len(array)):
+        k = array[i]
+        j = i-1
+        while j >= 0 and k < array[j] :
+                array[j + 1] = array[j]
+                j -= 1
+        array[j + 1] = k
+  return array  
 
-done
-# Selection Sort #
-
-for i := 0 to size-2 do //find minimum from ith location to size iMin := i;
-for j:= i+1 to size – 1 do
-if array[j] < array[iMin] then iMin := j
-done
-swap array[i] with array[iMin]. done
+# data = [9, 5, 1, 4, 3]
+input_data = input()
+data = []
+for item in input_data.split(', '):
+  if item.isnumeric():
+    data.append(int(item))
+  elif item.lstrip("-").isnumeric():
+    data.append(int(item))
+print(insertionSort(data))
