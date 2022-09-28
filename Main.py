@@ -1,14 +1,15 @@
-from typing import List
+# Insertion Sorting # for i := 1 to size-1 do
+key := array[i] j := i
+while j > 0 AND array[j-1] > key do array[j] := array[j-1];
+j := j – 1 done
+array[j] := key
 
-def selectionSort(array, size) -> List[int]:
-  # Write your code here
 
-# Do not change the following code
-input_data = input()
-data = []
-for item in input_data.split(', '):
-  if item.isnumeric():
-    data.append(int(item))
-  elif item.lstrip("-").isnumeric():
-    data.append(int(item))
-print(selectionSort(data, len(data)))
+done
+# Selection Sort #
+
+for i := 0 to size-2 do //find minimum from ith location to size iMin := i;
+for j:= i+1 to size – 1 do
+if array[j] < array[iMin] then iMin := j
+done
+swap array[i] with array[iMin]. done
